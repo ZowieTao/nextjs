@@ -1,5 +1,3 @@
-import './global.css';
-
 import Head from 'next/head';
 
 import { wait } from '@/util';
