@@ -1,8 +1,11 @@
 import Head from 'next/head';
+import { useState } from 'react';
 
 import { wait } from '@/util';
 
 export default function Home() {
+  const [first, setFirst] = useState('');
+
   return (
     <>
       <Head>
@@ -18,6 +21,8 @@ export default function Home() {
             const files = Array.from(event.target.files ?? []);
             console.log('trigger onChange function');
             console.log('event: ', event);
+            setFirst(JSON.stringify(event.target));
+
             console.log('event.target.files: ', event.target.files);
             console.log('Array.from(event.target.files ?? []);: ', files);
           }}
@@ -29,6 +34,7 @@ export default function Home() {
             .join(', ')}
         />
 
+        <code>{first}</code>
         <div style={{ height: '100px' }} />
 
         <div>
