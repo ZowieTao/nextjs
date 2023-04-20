@@ -21,7 +21,6 @@ export default function Home() {
             const files = Array.from(event.target.files ?? []);
             console.log('trigger onChange function');
             console.log('event: ', event);
-            setFirst(JSON.stringify(event.target));
 
             console.log('event.target.files: ', event.target.files);
             console.log('Array.from(event.target.files ?? []);: ', files);
