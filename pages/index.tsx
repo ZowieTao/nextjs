@@ -12,6 +12,25 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <>
+        <input
+          type={'file'}
+          onChange={(event) => {
+            const files = Array.from(event.target.files ?? []);
+            console.log('trigger onChange function');
+            console.log('event: ', event);
+            console.log('event.target.files: ', event.target.files);
+            console.log('Array.from(event.target.files ?? []);: ', files);
+          }}
+          multiple={false}
+          accept={['png', 'jpg', 'jpeg']
+            .map((e) => {
+              return `image/${e}`;
+            })
+            .join(', ')}
+        />
+
+        <div style={{ height: '100px' }} />
+
         <div>
           <a href="https://www.baidu.com/s?wd=hello" target="_blank">
             a tag to baidu:
