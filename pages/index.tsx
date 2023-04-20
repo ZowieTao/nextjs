@@ -1,11 +1,8 @@
 import Head from 'next/head';
-import { useState } from 'react';
 
 import { wait } from '@/util';
 
 export default function Home() {
-  const [first, setFirst] = useState('');
-
   return (
     <>
       <Head>
@@ -33,7 +30,6 @@ export default function Home() {
             .join(', ')}
         />
 
-        <code>{first}</code>
         <div style={{ height: '100px' }} />
 
         <div>
